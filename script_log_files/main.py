@@ -1,4 +1,5 @@
 import sys
+from script_log_files import *
 
 
 def main(*args: list):
@@ -20,27 +21,6 @@ def main(*args: list):
             ...
 
 
-def parse_log_line(line: str) -> dict:
-    ...
-
-
-def load_logs(file_path: str) -> list:
-    ...
-
-
-def filter_logs_by_level(logs: list, level: str) -> list:
-    ...
-
-
-def count_logs_by_level(logs: list) -> dict:
-    ...
-
-
-def display_log_counts(counts: dict):
-    ...
-
-
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         main(sys.argv)
-

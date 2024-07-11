@@ -1,8 +1,11 @@
 from typing import Callable, Counter
 import re
 
-# Module 5 / Task 1
+
 def caching_fibonacci():
+    """
+    Module 5 / Task 1
+    """
     cache = {}
 
     def fibonacci(n):
@@ -22,8 +25,10 @@ fib = caching_fibonacci()
 # print(fib(10))
 
 
-# Module 5 / Task 2
 def generator_numbers(input_text: str):
+    """
+    # Module 5 / Task 2
+    """
     for line in re.findall(r'\d+.?\d+', input_text):
         yield float(line)
 
