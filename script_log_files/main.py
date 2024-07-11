@@ -2,26 +2,22 @@ import sys
 
 
 def main(*args: list):
-    path, *args = args
-    cmd = cmd.strip().lower()
+    path = ''
+    cmd_list = []
 
-    user_input = input('Enter a command: ')
-    command, *args = parse_input(user_input)
+    if len(args) >= 2:
+        path, *commands = args
+        cmd_list = commands.strip().lower()
 
-    if command in ['close', 'exit']:
-        ...
-    elif command in ['hello', 'hi']:
-        ...
-    elif command == 'add':
-        ...
-    elif command == 'change':
-        ...
-    elif command == 'phone':
-        ...
-    elif command == 'all':
-        ...
-    else:
-        ...
+    match cmd_list[0]:
+        case 'info':
+            ...
+        case 'error':
+            ...
+        case 'debug':
+            ...
+        case 'warning':
+            ...
 
 
 def parse_log_line(line: str) -> dict:
