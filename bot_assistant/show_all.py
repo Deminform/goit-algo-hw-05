@@ -1,6 +1,8 @@
-from colorama import Fore, Style, init
+from colorama import Fore, init
+from decorators import input_error
 
 
+@input_error
 def show_all(contacts: list) -> str:
     init(autoreset=True)
     persons_list = ''

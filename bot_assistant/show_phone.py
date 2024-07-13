@@ -1,13 +1,15 @@
 from colorama import Fore, Style, init
+from decorators import input_error
+from is_person_exist import is_person_exist
 
 
+@input_error
 def show_phone(args: list, contacts: list):
     init(autoreset=True)
 
-    if not args:
-        return Fore.YELLOW + 'Please type a' + Style.BRIGHT + ' Username'
+    name = args[0]
 
-    for person in contacts:
-        if person['name'].lower() == args[0].lower():
-            return person['phone']
-    return Fore.YELLOW + 'Username not found.'
+    if not is_person_exist(name, contacts):
+        raise ValueError(Fore.YELLOW + f'The username with name {name} does not exist.')
+
+    return next((person['phone'] for person in contacts if person['name'].lower() == args[0].lower()))
