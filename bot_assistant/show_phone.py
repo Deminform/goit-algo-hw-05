@@ -1,5 +1,5 @@
 from colorama import Fore, Style, init
-from decorators import input_error
+from decorator import input_error
 from is_person_exist import is_person_exist
 
 

@@ -1,15 +1,14 @@
-from colorama import Fore, init
-from decorators import input_error
+from decorator import input_error
+from prettytable import PrettyTable
 
 
 @input_error
-def show_all(contacts: list) -> str:
-    init(autoreset=True)
-    persons_list = ''
+def show_all(contacts: list):
+    table = PrettyTable()
+    table.align = 'l'
+    table.field_names = ['Name', 'Phone number', 'id']
+
     for person in contacts:
-        persons_list += (
-            f'Name: {person['name']}, '
-            f'Phone: {person['phone']}, '
-            f'id: {person["id"]}.\n'
-        )
-    return Fore.YELLOW + 'No records yet' if len(contacts) == 0 else persons_list
+        table.add_row([person['name'], person['phone'], person["id"]])
+
+    return 'No records yet' if len(contacts) == 0 else table

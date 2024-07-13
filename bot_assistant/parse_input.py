@@ -1,4 +1,4 @@
-from decorators import input_error
+from decorator import input_error
 
 
 @input_error

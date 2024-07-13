@@ -1,11 +1,10 @@
 import re
-from colorama import Fore, Style, init
 from add_contact import add_contact
 from parse_input import parse_input
 from change_contact import change_contact
 from show_phone import show_phone
 from show_all import show_all
-from decorators import input_error
+from decorator import input_error
 
 
 @input_error
@@ -16,7 +15,6 @@ def main():
     while True:
         user_input = input('Enter a command: ')
         command, *args = parse_input(user_input)
-        init(autoreset=True)
 
         if command in ['close', 'exit']:
             print("Good bye!")
@@ -32,7 +30,7 @@ def main():
         elif command == 'all':
             print(show_all(contacts))
         else:
-            print(Fore.YELLOW + 'Invalid command.')
+            print('Invalid command.')
 
 
 if __name__ == '__main__':

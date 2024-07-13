@@ -22,7 +22,8 @@ def caching_fibonacci():
 
 
 fib = caching_fibonacci()
-# print(fib(10))
+print(fib(10))
+print(fib(15))
 
 
 def generator_numbers(input_text: str):
